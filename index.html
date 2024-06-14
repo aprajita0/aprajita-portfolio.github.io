@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Portfolio Web Design</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./styles.css">
+	<script src="./scripts.js"></script>
+	<link rel="icon" type="image/jpg" href="./imgs/logo.png">
+</head>
+<body>
+	<header>
+		<a href="#" class="logo-holder">
+			<div class="logo">AS</div>
+
+		</a>
+		<nav>
+			<ul id="menu">
+				<li>
+					<a href="index.html">Home</a>
+				</li>
+				<li>
+					<a href="about.html">About</a>
+				</li>
+				<li>
+					<a href="experience.html">Work Experience</a>
+				</li>
+				<li>
+					<a href="mailto:aprajita0625@gmail.com" class="button">Contact Me</a>
+				</li>
+			</ul>
+			<a href="#" class="mobile-toggle" onClick="toggleMobileMenu();">
+				<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+					<path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h10"/>
+				</svg>
+			</a>
+		</nav>
+	</header>
+	<main>
+		<section class="hero container">
+            <div class="hero-peach">
+                <div>
+                    <h1 id="demo"></h1>
+                    <div class="social-links" id="socialLinks">
+                        <a href="https://github.com/aprajita0">
+                            <img src="./imgs/github.png" alt="GitHub" width="48" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/aprajita-srivastava25/">
+                            <img src="./imgs/linkedin.png" alt="LinkedIn" width="48" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-purple">
+                <img src="./imgs/aprajita.png" alt="Aprajita" width="100%" />
+            </div>
+        </section>
+
+        <div class="welcome-container">
+            <h2 id="welcome"></h2>
+        </div>
+    </main>
+
+    <script>
+        var i = 0;
+        var txt1 = "Hi! I'm Aprajita Srivastava";
+        var txt2 = "Welcome to My Website!";
+        var speed = 40;
+
+        function typeWriter(text, elementId, callback) {
+            if (i < text.length) {
+                document.getElementById(elementId).innerHTML += text.charAt(i);
+                i++;
+                setTimeout(() => typeWriter(text, elementId, callback), speed);
+            } else {
+                i = 0; // reset for the next text
+                if (callback) callback();
+            }
+        }
+
+        window.onload = function() {
+            typeWriter(txt1, "demo", function() {
+                document.getElementById("socialLinks").style.display = "block";
+                typeWriter(txt2, "welcome");
+            });
+        };
+    </script>
+		
+	</main>
+	<footer>
+		<p style="text-align: center;">&copy; 2024 Aprajita Srivastava</p>
+		<p style="text-align: center;">This page adjusts the form layout for smaller screens.</p>
+	</footer>
+	
+</body>
+
+
+</html>
+
+
+
+
